@@ -35,29 +35,28 @@ def inputt(request):
 <html>
 
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Vera.fy</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet'>
 
-    <link rel="stylesheet" type="text/css" href= "{% static 'style.css' %}"/>
+    <link rel='stylesheet' type='text/css' href= '{% static 'style.css' %}'/>
 
   </head>
 
-  <body align="center">
+  <body align='center'>
 
-
-    <div style="padding: 50px">
-      <form id="myForm">
+    <div style='padding: 50px'>
+      <form id='myForm'>
         <h2> What do you want to know? </h2>
         <p>
-          <input type="text" name="input_str" id="myInput"><button id="myButton" type="submit">Fact check!</button>
+          <input type='text' name='input_str' id='myInput'><button id='myButton' type='submit'>Fact check!</button>
         </p>
     </form>
   </div>
     <!-- save space for truth value output -->
 
-          <div id="infoLabel" style="padding: 20px">{{ message|default_if_none:'DNE'}}</div>
+          <div id='infoLabel' style='padding: 20px'>{{ message|default_if_none:'DNE'}}</div>
   </body>
 
 </html>
