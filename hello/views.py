@@ -14,7 +14,7 @@ def inputt(request):
     if request.POST:
         input_data = request.POST.get("input_str")
         return HttpResponse(truther.truthme(input_data), status=200)
-    elif request.GET:
+    else:
         return render(request, 'input.html')
     
     
