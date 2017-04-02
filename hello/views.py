@@ -24,10 +24,16 @@ def false(request):
 def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
+<<<<<<< HEAD
         #return HttpResponse(truther.truthme(input_data))
         #logger = logging.getLogger()
         #vars = dict()
         #logger.setLevel(logging.DEBUG)
+=======
+        logger = logging.getLogger()
+        vars = dict()
+        logger.setLevel(logging.DEBUG)
+>>>>>>> parent of 00fd847... deploy
         
         if truther.truthme(input_data):
             return redirect('http://verafy.herokuapp.com/false/')
@@ -47,3 +53,5 @@ def inputt(request):
         #}
     else:
         return render(request, 'input.html')
+    
+    
