@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import sys
 from django.http import HttpResponse
 from .models import Greeting
 from django.views.decorators.csrf import csrf_exempt
@@ -20,7 +21,7 @@ def inputt(request):
             #vars['output'] = "True"
         #else:
         #    vars['output'] = "False"
-        print temp_var
+        print >>sys.stderr, temp_var
         return {
             "output": str(truther.truthme(input_data))
         }
