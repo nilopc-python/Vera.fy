@@ -26,7 +26,7 @@ def false(request):
 def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
-        output = HttpResponse(truther.truthme(input_data))
+        return HttpResponse(truther.truthme(input_data))
 
         if truther.truthme(input_data):
             return render(request, 'inputT.html')
