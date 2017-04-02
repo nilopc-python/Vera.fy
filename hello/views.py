@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models import Greeting
 from django.views.decorators.csrf import csrf_exempt
 #from django.shortcuts import render_to_response
+import logging
 import truther
 import webbrowser
 
@@ -15,11 +16,14 @@ def index(request):
 def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
-
+        logger = logging.getLogger()
+        
         if truther.truthme(input_data):
             webbrowser.open_new("http://google.com")
+            logger.debug("True")
         else:
             webbrowser.open_new("http://bing.com")
+            logger.debug("False")
             
         return render(request, 'input.html')
         #return {
