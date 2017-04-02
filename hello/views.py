@@ -24,6 +24,7 @@ def false(request):
 def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
+        return HttpResponse(truther.truthme(input_data))
         logger = logging.getLogger()
         vars = dict()
         logger.setLevel(logging.DEBUG)
@@ -49,5 +50,3 @@ def inputt(request):
         #}
     else:
         return render(request, 'input.html')
-    
-    
