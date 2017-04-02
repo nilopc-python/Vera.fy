@@ -25,11 +25,14 @@ def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
 <<<<<<< HEAD
+<<<<<<< HEAD
         #return HttpResponse(truther.truthme(input_data))
         #logger = logging.getLogger()
         #vars = dict()
         #logger.setLevel(logging.DEBUG)
 =======
+=======
+>>>>>>> parent of 00fd847... deploy
         logger = logging.getLogger()
         vars = dict()
         logger.setLevel(logging.DEBUG)
