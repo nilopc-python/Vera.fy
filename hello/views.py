@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Greeting
 from django.views.decorators.csrf import csrf_exempt
-
+from django.shortcuts import render_to_response
 import truther
 
 @csrf_exempt
