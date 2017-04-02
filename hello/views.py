@@ -13,19 +13,19 @@ def index(request):
 def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
-        vars = dict()
-        if truther.truthme(input_data):
-            vars['output'] = "True"
-        else:
-            vars['output'] = "False"
+        #vars = dict()
+        #if truther.truthme(input_data):
+        #    vars['output'] = "True"
+        #else:
+        #    vars['output'] = "False"
             
         #return {
          #   "output": str(truther.truthme(input_data))
         #}
-        return render(request, 'input.html', context=vars, status=200)
-        #return {
-        #    "output": truther.truthme(input_data)
-        #}
+        #return render(request, 'input.html', context=vars, status=200)
+        return {
+            "output": str(truther.truthme(input_data))
+        }
     else:
         return render(request, 'input.html')
     
