@@ -24,37 +24,16 @@ def false(request):
 def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
-<<<<<<< HEAD
-<<<<<<< HEAD
-        #return HttpResponse(truther.truthme(input_data))
-        #logger = logging.getLogger()
-        #vars = dict()
-        #logger.setLevel(logging.DEBUG)
-=======
-=======
->>>>>>> parent of 00fd847... deploy
-        logger = logging.getLogger()
-        vars = dict()
-        logger.setLevel(logging.DEBUG)
->>>>>>> parent of 00fd847... deploy
-        
+        return HttpResponse(truther.truthme(input_data))
+
         if truther.truthme(input_data):
             return redirect('http://verafy.herokuapp.com/false/')
-            #webbrowser.open_new("http://google.com")
-            #vars["output"] = "True"
-            #return render(request, 'inputT.html')
         else:
             return redirect('http://verafy.herokuapp.com/true/')
-            #webbrowser.open_new("http://bing.com")
-            #logger.debug("False")
-            #print("False")
-            #vars["output"] = "False"
-            #return render(request, 'inputF.html')
+
         #return render(request, 'input.html', context=vars)
         #return {
         #    "output": str(truther.truthme(input_data))
         #}
     else:
         return render(request, 'input.html')
-    
-    
