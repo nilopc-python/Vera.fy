@@ -14,7 +14,7 @@ def index(request):
 
 @csrf_exempt
 def true(request):
-    return render(request, 'inputT.html')
+    return render(request, 'index.html')
 
 @csrf_exempt
 def false(request):
@@ -24,26 +24,23 @@ def false(request):
 def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
-        return HttpResponse(truther.truthme(input_data))
-        logger = logging.getLogger()
-        vars = dict()
-        logger.setLevel(logging.DEBUG)
+        #return HttpResponse(truther.truthme(input_data))
+        #logger = logging.getLogger()
+        #vars = dict()
+        #logger.setLevel(logging.DEBUG)
         
         if truther.truthme(input_data):
-            return redirect('/false/')
-            webbrowser.open_new("http://google.com")
-            logger.debug("True")
-            print("True")
-            vars["output"] = "True"
-            return render(request, 'inputT.html')
+            return redirect('http://verafy.herokuapp.com/false/')
+            #webbrowser.open_new("http://google.com")
+            #vars["output"] = "True"
+            #return render(request, 'inputT.html')
         else:
-            return redirect('/true/')
-            webbrowser.open_new("http://bing.com")
-            logger.debug("False")
-            print("False")
-            vars["output"] = "False"
-            return render(request, 'inputF.html')
-            
+            return redirect('http://verafy.herokuapp.com/true/')
+            #webbrowser.open_new("http://bing.com")
+            #logger.debug("False")
+            #print("False")
+            #vars["output"] = "False"
+            #return render(request, 'inputF.html')
         #return render(request, 'input.html', context=vars)
         #return {
         #    "output": str(truther.truthme(input_data))
