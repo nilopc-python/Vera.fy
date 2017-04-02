@@ -15,5 +15,5 @@ def inputt(request):
     #    return render(request, 'input.html')
     #elif request.method == 'POST':
     input_data = request.POST.get("input_str")
-    return Response(truther.truthme(input_data), status=200)
+    return HttpResponse(truther.truthme(input_data), status=200)
     
