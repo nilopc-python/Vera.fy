@@ -28,7 +28,7 @@ def inputt(request):
 
         input_data = request.POST.get("input_str")
         output = HttpResponse(truther.truthme(input_data))
-        t = Template("
+        t = Template('''
 {% load static %} 
 
 <!DOCTYPE html>
@@ -60,7 +60,7 @@ def inputt(request):
   </body>
 
 </html>
- ")
+        ''')
 
         if truther.truthme(input_data):
             c = Context({'message': 'True'})
