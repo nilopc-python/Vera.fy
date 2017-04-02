@@ -65,15 +65,15 @@ def inputt(request):
         if truther.truthme(input_data):
             c = Context({'message': 'True'})
             html = t.render(c)
-            return render(request, 'index.html')
+            return render(request, 'inputT.html')
         else:
             c = Context({'message': 'False'})
             html = t.render(c)
-            return render(request, 'index.html')
-
+            return render(request, 'inputF.html')
+        
         #return render(request, 'input.html', context=vars)
         #return {
         #    "output": str(truther.truthme(input_data))
         #}
     else:
-        return render(request, 'index.html')
+        return render(request, 'input.txt')
