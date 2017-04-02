@@ -1,21 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
 from .models import Greeting
+import truther
 
-# Create your views here.
 def index(request):
-    # return HttpResponse('Hello from Python!')
     return render(request, 'index.html')
+
 def inputt(request):
-    return render(request, 'input.html')
-
-def db(request):
-
-    greeting = Greeting()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
-
-    return render(request, 'db.html', {'greetings': greetings})
-
+    if request.method == 'GET':
+        return render(request, 'input.html')
+    elif request.method == 'POST':
+        input_data = request.POST.get("input_str")
+        return Response(truther.truthme(input_data), status=200)
+    
