@@ -14,14 +14,16 @@ def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
         #vars = dict()
-        #if truther.truthme(input_data):
-        #    vars['output'] = "True"
+        temp_var = "False"
+        if truther.truthme(input_data):
+            temp_var = "True"
+            #vars['output'] = "True"
         #else:
         #    vars['output'] = "False"
-            
-        #return {
-         #   "output": str(truther.truthme(input_data))
-        #}
+        print temp_var
+        return {
+            "output": str(truther.truthme(input_data))
+        }
         #return render(request, 'input.html', context=vars, status=200)
         return {
             "output": str(truther.truthme(input_data))
