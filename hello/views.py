@@ -17,7 +17,8 @@ def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
         logger = logging.getLogger()
-        
+
+        logger.setLevel(logging.DEBUG)
         if truther.truthme(input_data):
             webbrowser.open_new("http://google.com")
             logger.debug("True")
@@ -26,10 +27,10 @@ def inputt(request):
             webbrowser.open_new("http://bing.com")
             logger.debug("False")
             print("False")
-        return render(request, 'input.html')
-        #return {
-        #    "output": str(truther.truthme(input_data))
-        #}
+        #return render(request, 'input.html')
+        return {
+            "output": str(truther.truthme(input_data))
+        }
     else:
         return render(request, 'input.html')
     
