@@ -76,4 +76,4 @@ def inputt(request):
         #    "output": str(truther.truthme(input_data))
         #}
     else:
-        return render(request, 'input.html')
+        return render(request, 'index.html')
