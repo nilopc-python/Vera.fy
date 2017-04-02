@@ -11,9 +11,9 @@ def index(request):
 
 @csrf_exempt
 def inputt(request):
-    if request.method == 'GET':
-        return render(request, 'input.html')
-    elif request.method == 'POST':
-        input_data = request.POST.get("input_str")
-        return Response(truther.truthme(input_data), status=200)
+    #if request.method == 'GET':
+    #    return render(request, 'input.html')
+    #elif request.method == 'POST':
+    input_data = request.POST.get("input_str")
+    return Response(truther.truthme(input_data), status=200)
     
