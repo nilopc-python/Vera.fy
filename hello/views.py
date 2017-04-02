@@ -7,7 +7,8 @@ from .models import Greeting
 def index(request):
     # return HttpResponse('Hello from Python!')
     return render(request, 'index.html')
-
+def inputt(request):
+    return render(request, 'input.html')
 
 def db(request):
 
