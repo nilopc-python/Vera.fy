@@ -13,6 +13,14 @@ def index(request):
     return render(request, 'index.html')
 
 @csrf_exempt
+def true(request):
+    return render(request, 'inputT.html')
+
+@csrf_exempt
+def false(request):
+    return render(request, 'inputF.html')
+
+@csrf_exempt
 def inputt(request):
     if request.method == 'POST':
         input_data = request.POST.get("input_str")
@@ -21,18 +29,19 @@ def inputt(request):
         logger.setLevel(logging.DEBUG)
         
         if truther.truthme(input_data):
+            return redirect('/false/')
             webbrowser.open_new("http://google.com")
             logger.debug("True")
             print("True")
             vars["output"] = "True"
             return render(request, 'inputT.html')
         else:
+            return redirect('/true/')
             webbrowser.open_new("http://bing.com")
             logger.debug("False")
             print("False")
             vars["output"] = "False"
             return render(request, 'inputF.html')
-        
             
         #return render(request, 'input.html', context=vars)
         #return {
