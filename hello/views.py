@@ -25,13 +25,16 @@ def inputt(request):
             logger.debug("True")
             print("True")
             vars["output"] = "True"
+            return render(request, 'inputT.html')
         else:
             webbrowser.open_new("http://bing.com")
             logger.debug("False")
             print("False")
             vars["output"] = "False"
+            return render(request, 'inputF.html')
+        
             
-        return render(request, 'input.html', context=vars)
+        #return render(request, 'input.html', context=vars)
         #return {
         #    "output": str(truther.truthme(input_data))
         #}
