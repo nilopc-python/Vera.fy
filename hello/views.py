@@ -21,10 +21,11 @@ def inputt(request):
         if truther.truthme(input_data):
             webbrowser.open_new("http://google.com")
             logger.debug("True")
+            print("True")
         else:
             webbrowser.open_new("http://bing.com")
             logger.debug("False")
-            
+            print("False")
         return render(request, 'input.html')
         #return {
         #    "output": str(truther.truthme(input_data))
