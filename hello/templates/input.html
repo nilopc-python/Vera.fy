@@ -27,7 +27,7 @@
   </div>
     <!-- save space for truth value output -->
 
-    <div id="infoLabel" style="padding: 20px">{{ output }}</div>
+    <div id="infoLabel" style="padding: 20px">{{ output|default_if_none:"DNE"}}</div>
   </body>
 
 </html>
